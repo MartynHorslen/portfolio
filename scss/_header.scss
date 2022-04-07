@@ -1,7 +1,21 @@
 header {
-    flex-basis: 300px;
-    border-right: 2px solid $border-color;
+    flex: 1 0 200px;
+    border-right: 3px solid $primary-color;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    #initials {
+        font-size: 96px;
+        font-weight: 700;
+        color: $primary-color;
+        padding:30px;
+        border-bottom: 3px solid $primary-color;
+        text-align: center;
+    }
+    #nav {
+        width: 100%;
+    }
 }
 main {
-    flex: 1 1 auto;
+    flex: 1 0 auto;
 }
