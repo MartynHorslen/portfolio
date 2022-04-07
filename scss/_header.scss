@@ -1,5 +1,5 @@
 header {
-    flex: 1 0 200px;
+    flex: 0 0 200px;
     border-right: 3px solid $primary-color;
     display: flex;
     flex-direction: column;
@@ -17,5 +17,5 @@ header {
     }
 }
 main {
-    flex: 1 0 auto;
+    flex: 1;
 }
