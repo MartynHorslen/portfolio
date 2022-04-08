@@ -3,7 +3,7 @@
     flex-direction: column;
     padding: 30px 20px;
     .project {
-        padding: 10px;
+        padding: 0 10px 50px;
         display: flex;
         flex-direction: column;
         figure {
@@ -18,7 +18,7 @@
         }
         h2 {
             font-weight: 700;
-            padding-top: 20px;
+            padding-top: 10px;
         }
         &:hover {
             figure img {
@@ -59,7 +59,7 @@
 
 @media (min-width: 1200px){
     #portfolio {
-        padding: 80px 50px;
+        padding: 80px 50px 40px;
         .project {
             flex-basis: 33.33%;
         }
