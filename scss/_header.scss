@@ -1,6 +1,5 @@
 header {
     flex: 0 0 200px;
-    border-right: 3px solid $primary-color;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -14,8 +13,22 @@ header {
         text-decoration: none;
     }
     nav {
+        display: flex;
+        flex-direction: column;
+        > a {
+            text-align: center;
+            padding: 20px;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: $primary-color;
+            text-decoration: none;
+            &:hover {
+                background-color: $primary-color;
+                color: white;
+            }
+        }
         ul {
-            display: flex;
+            display: none;
             flex-direction: column;
             align-items: center;
             li {
@@ -34,7 +47,7 @@ header {
         }
     }
     #social {
-        display: flex;
+        display: none;
         flex-direction: row;
         justify-content: center;
         margin: 20px 0;
@@ -58,7 +71,23 @@ main {
 }
 
 @media (min-width: 768px){
-    nav ul {
-        margin-top: 100px;
+    header {
+        position: fixed;
+        width: 200px;
+        height: 100%;
+        border-right: 3px solid $primary-color;
+        nav > ul {
+            display: flex;
+            margin-top: 100px;
+        }   
+        #social {
+            display: flex;
+        }
+    }
+    main {
+        margin-left: 200px;
+    }
+    nav > a {
+        display: none;
     }
 }
