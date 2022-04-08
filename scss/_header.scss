@@ -1,5 +1,4 @@
 header {
-    flex: 0 0 200px;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -11,6 +10,7 @@ header {
         border-bottom: 3px solid $primary-color;
         text-align: center;
         text-decoration: none;
+        display: none;
     }
     nav {
         display: flex;
@@ -76,6 +76,9 @@ main {
         width: 200px;
         height: 100%;
         border-right: 3px solid $primary-color;
+        #initials {
+            display: block;
+        }
         nav > ul {
             display: flex;
             margin-top: 100px;
