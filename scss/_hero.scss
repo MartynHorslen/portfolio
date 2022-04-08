@@ -28,6 +28,9 @@
             object-fit: cover;
             filter: brightness(50%);
         }
+        #small {
+            height: calc(50vh - 64px);
+        }
     }
     footer {
         text-align: center;
@@ -53,7 +56,10 @@
     #hero {
         figure {
             img {
-                height: 100vh;
+                height: 100vh; 
+            }
+            #small {
+                height: 50vh;
             }
         }
     }
