@@ -1,83 +1,47 @@
-#hero {
-    display: flex;
-    flex-direction: column;
-    > div {
-        margin: 15px;
-        flex: 1;
-    }    
-    figure {
-        figcaption {
-            img {
-                border-radius: 50%;
-                filter: brightness(100%);
-                width: 50%;
-                height: auto;
-            }
-        }
+#intro {
+    padding: 25px;
+    font-size: 1rem;
+    h4 {
+        padding-bottom: 25px;
+        line-height: 1.5rem;
+        text-align: center;
     }
-    #intro {
-        padding: 25px;
-        font-size: 1rem;
-        h4 {
-            padding-bottom: 25px;
-            margin-left: 20px;
-            margin-right: 20px;
-            line-height: 1.5rem;
-            text-align: center;
-        }
-        h3 {
-            padding-bottom: 25px;            
-        }
-    }
-    #photo {
-        img {
-            width: 100%;
-            height: auto;
-        }
-        
-    }
-    #skills {
-        display:flex;
-        flex-direction: row;
-        justify-content: space-evenly;
-        flex-wrap: wrap;
-        div {
-            display: flex;
-            flex-direction: column;
-            text-align: center;
-            flex-basis: 25%;
-            i {
-                font-size: 2rem;
-            }
-            span {
-                margin: 10px 0;
-            }
-        }
+    h3 {
+        padding-bottom: 25px;            
     }
 }
 
+#skills {
+    display:flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    div {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        flex-basis: 25%;
+        i {
+            font-size: 2rem;
+        }
+        span {
+            margin: 10px 0;
+        }
+    }
+}
 @media (min-width: 576px){
-    #hero {
-        #skills {
-            div {
-                flex-basis: 25%;
-                padding: 10px 0;
-                i {
-                    font-size: 3rem;
-                }
+    #skills {
+        div {
+            flex-basis: 25%;
+            padding: 10px 0;
+            i {
+                font-size: 3rem;
             }
         }
     }
 }
-
 @media (min-width: 768px){
     #hero {
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: center;
-        > div {
-            flex: 1 0 40%;
-        }
         #skills {
             flex-basis: 100%;
             div {
@@ -86,14 +50,12 @@
                     font-size: 4rem;
                 }
             }
-        }
-        
+        } 
     }
 }
-
 @media (min-width: 992px){
     #hero {
-        #skills {
+        figure #skills {
             div {
                 flex: 1;
             }

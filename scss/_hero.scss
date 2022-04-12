@@ -1,5 +1,6 @@
 #hero {
-    position: relative;
+    display: flex;
+    flex-direction: column;
     figure {
         position: relative;
         figcaption {
@@ -28,9 +29,6 @@
             object-fit: cover;
             filter: brightness(25%);
         }
-        #small {
-            height: calc(50vh - 64px);
-        }
     }
     footer {
         text-align: center;
@@ -52,17 +50,17 @@
     }
     
 }
+
 @media (min-width: 768px){
     #hero {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
         figure {
             img {
                 height: 100vh; 
                 width: calc(100vw - 200px);
             }
-            #small {
-                height: 50vh;
-            }
         }
     }
-
 }
