@@ -8,6 +8,7 @@ $.get({
       });
       
     },
+    // Used just to test in case script couldn't fetch score.
     // error: function() {
     //   alert("there was an error.");
     // }
