@@ -6,5 +6,38 @@
             object-fit: cover;
             filter: brightness(25%);
         }
+        figcaption {
+            h1 {
+                font-size: 2rem;
+            }
+        }
+    }
+}
+
+@media (min-width: 576px){
+    #small-hero figure {
+        figcaption {
+            h1 {
+                font-size: 3rem;
+            }
+        }
+    }
+}
+@media (min-width: 768px){
+    #small-hero {
+        figure {
+            img {
+                width: calc(100vw - 200px);
+            }
+        }
+    }
+}
+@media (min-width: 992px){
+    #small-hero figure {
+        figcaption {
+            h1 {
+                font-size: 4rem;
+            }
+        }
     }
 }
