@@ -26,6 +26,7 @@
         img {
             width: 100vw;
             height: calc(100vh - 64px);
+            min-height: 900px;
             object-fit: cover;
             filter: brightness(25%);
         }

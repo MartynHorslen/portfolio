@@ -1,13 +1,44 @@
-#intro {
-    padding: 25px;
-    font-size: 1rem;
-    h4 {
-        padding-bottom: 25px;
-        line-height: 1.5rem;
-        text-align: center;
+.hero figure figcaption {
+    h1 {
+        margin-bottom: 25px;
     }
-    h3 {
-        padding-bottom: 25px;            
+    h2 {
+        margin-bottom: 0;
+    }
+    #intro {
+        padding: 25px;
+        font-size: 1rem;
+        h4 {
+            padding-bottom: 10px;
+            line-height: 1.5rem;
+            text-align: left;
+        }
+        p {
+            text-align: left;
+            padding-bottom: 10px;
+            a {
+                color:$primary-color;
+            }
+        }
+        h3, .personal {
+            padding-bottom: 15px;            
+        }
+        .pro-links {
+            text-align: left;
+            margin: 25px 0;
+            div {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+            }
+            .cv, .github {
+                padding: 5px 15px;
+                font-size: 2rem;
+            }
+            span {
+                align-content: center;
+            }
+        }
     }
 }
 
@@ -16,13 +47,14 @@
     flex-direction: row;
     justify-content: space-evenly;
     flex-wrap: wrap;
+    padding-bottom: 10px;
     div {
         display: flex;
         flex-direction: column;
         text-align: center;
         flex-basis: 25%;
         i {
-            font-size: 2rem;
+            font-size: 1.5rem;
         }
         span {
             margin: 10px 0;
@@ -52,9 +84,33 @@
     }
 }
 @media (min-width: 992px){
-    figure #skills {
-        div {
-            flex: 1;
+    figure {
+        #skills {
+            flex-basis: 50%;
+            div {
+                flex: 25%;
+            } 
+        }
+        figcaption #intro .flex-cont {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            justify-content: space-around;
+            .left, .right {
+                flex-basis: 48%;
+                align-self: center;
+            }
+            .left {
+                p {
+                    text-align: left;
+                    margin-bottom: 25px;
+                }
+                h4 {
+                    font-size: 1.5rem;
+                    text-align: left;
+                    width: 100%;
+                }
+            }
         }
     }
     #intro {
@@ -65,9 +121,13 @@
     }
 }
 @media (min-width: 1200px){
+    #intro {
+        width: 60%;
+        margin: 0 auto;
+    }
     #skills {
         justify-content: center;
-        flex-wrap: nowrap;
+        flex-wrap: wrap;
         div {
             flex: 0 1 150px;
         }
