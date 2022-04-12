@@ -41,41 +41,35 @@
     }
 }
 @media (min-width: 768px){
-    #hero {
-        #skills {
-            flex-basis: 100%;
-            div {
-                flex-basis: 25%;
-                i {
-                    font-size: 4rem;
-                }
+    #skills {
+        flex-basis: 100%;
+        div {
+            flex-basis: 25%;
+            i {
+                font-size: 4rem;
             }
-        } 
+        }
     }
 }
 @media (min-width: 992px){
-    #hero {
-        figure #skills {
-            div {
-                flex: 1;
-            }
+    figure #skills {
+        div {
+            flex: 1;
         }
-        #intro {
-            h4 {
-                width: 70%;
-                margin: 0 auto;
-            }
+    }
+    #intro {
+        h4 {
+            width: 70%;
+            margin: 0 auto;
         }
     }
 }
 @media (min-width: 1200px){
-    #hero {
-        #skills {
-            justify-content: center;
-            flex-wrap: nowrap;
-            div {
-                flex: 0 1 150px;
-            }
+    #skills {
+        justify-content: center;
+        flex-wrap: nowrap;
+        div {
+            flex: 0 1 150px;
         }
     }
 }
