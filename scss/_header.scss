@@ -2,6 +2,8 @@ header {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
+    z-index: 1;
+    background-color: white;
     #initials {
         font-size: 96px;
         font-weight: 700;
@@ -28,7 +30,7 @@ header {
             }
         }
         ul {
-            display: none;
+            display: flex;
             flex-direction: column;
             align-items: center;
             li {
