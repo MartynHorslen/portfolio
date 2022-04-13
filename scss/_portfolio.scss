@@ -20,12 +20,22 @@
             font-weight: 700;
             padding-top: 10px;
         }
+        p {
+            padding-bottom: 10px;
+        }
+        a, a:visited {
+            text-decoration: none;
+            color: inherit;
+            &:hover {
+                text-decoration: underline;
+            }
+        }
         &:hover {
             figure img {
                 box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.2);
                 filter: brightness(50%);
             }
-            h2, p {
+            h2 {
                 opacity: 0.3;
             }
             
