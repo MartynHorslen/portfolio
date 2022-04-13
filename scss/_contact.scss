@@ -49,23 +49,32 @@
 }
 
 @media (min-width: 576px){
-    
+    #contact {
+        padding: 15px;
+        max-width: 576px;
+        margin: 0 auto;
+    }
 }
 
 @media (min-width: 768px){
     #contact {
         padding: 15px;
+        max-width: 568px;
+        margin: 0 auto;
     }
 }
 
 @media (min-width: 992px){
     #contact {
         flex-direction: row;
+        max-width: 970px;
+        margin: 0 auto;
         #info {
             flex-basis: 30%;
         }
         #contact-form {
             flex-basis: 70%;
+            max-width: 540px;
         }
     }
 }
@@ -73,6 +82,8 @@
 @media (min-width: 1200px){
     #contact {
         padding: 0 30px;
+        max-width: 970px;
+        margin: 0 auto;
     }
     #contact #contact-form form {
         flex-direction: row;
