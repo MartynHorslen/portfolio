@@ -6,7 +6,9 @@
 *, html, body {
     font-size: 16px;
     box-sizing: border-box;
-    overflow-x: hidden;
+}
+html, body {
+    overflow-x:hidden;
 }
 @-moz-document url-prefix() {
     html,body{overflow-x: hidden !important;}
