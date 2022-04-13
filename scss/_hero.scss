@@ -26,9 +26,12 @@
         img {
             width: 100vw;
             height: calc(100vh - 64px);
-            min-height: 800px;
             object-fit: cover;
-            filter: brightness(25%);
+            filter: brightness(30%);
+        }
+        
+        .full {
+            min-height: 800px;
         }
     }
     footer {

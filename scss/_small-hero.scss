@@ -2,9 +2,9 @@
     figure {
         img {
             width: 100vw;
-            height: calc(50vh - 64px);
+            height: calc(40vh);
             object-fit: cover;
-            filter: brightness(25%);
+            filter: brightness(50%);
         }
         figcaption {
             h1 {
@@ -18,7 +18,7 @@
     #small-hero figure {
         figcaption {
             h1 {
-                font-size: 3rem;
+                font-size: 2.5rem;
             }
         }
     }
