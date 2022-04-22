@@ -5,10 +5,10 @@ header {
     z-index: 1;
     background-color: white;
     #initials {
-        font-size: 96px;
+        font-size: 64px;
         font-weight: 700;
         color: $primary-color;
-        padding:30px;
+        padding:15px;
         border-bottom: 3px solid $primary-color;
         text-align: center;
         text-decoration: none;
@@ -35,7 +35,7 @@ header {
             align-items: center;
             li {
                    padding: 5px 0;
-                   margin: 15px 0;                
+                   margin: 10px 0;                
                    a {
                        text-decoration: none;
                        color: black;
@@ -83,7 +83,7 @@ main {
         }
         nav > ul {
             display: flex;
-            margin-top: 100px;
+            margin-top: 20px;
         }   
         #social {
             display: flex;
@@ -94,5 +94,33 @@ main {
     }
     nav > a {
         display: none;
+    }
+}
+@media (min-height: 500px){
+    header {
+        nav > ul {
+            margin-top: 20px;
+            li {
+                margin: 13px 0;
+            }
+        }
+        #initials {
+            font-size: 80px;
+            padding:30px;
+        }
+    }
+}
+@media (min-height: 600px){
+    header {
+        nav > ul {
+            margin: 60px 0 20px;
+            li {
+                margin: 15px 0;
+            }
+        }
+        #initials {
+            font-size: 96px;
+            padding:30px;
+        }
     }
 }
