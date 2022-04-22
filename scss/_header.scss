@@ -95,32 +95,32 @@ main {
     nav > a {
         display: none;
     }
-}
-@media (min-height: 500px){
-    header {
-        nav > ul {
-            margin-top: 20px;
-            li {
-                margin: 13px 0;
+    @media (min-height: 500px){
+        header {
+            nav > ul {
+                margin-top: 20px;
+                li {
+                    margin: 13px 0;
+                }
             }
-        }
-        #initials {
-            font-size: 80px;
-            padding:30px;
+            #initials {
+                font-size: 80px;
+                padding:30px;
+            }
         }
     }
-}
-@media (min-height: 600px){
-    header {
-        nav > ul {
-            margin: 60px 0 20px;
-            li {
-                margin: 15px 0;
+    @media (min-height: 600px){
+        header {
+            nav > ul {
+                margin: 60px 0 20px;
+                li {
+                    margin: 15px 0;
+                }
             }
-        }
-        #initials {
-            font-size: 96px;
-            padding:30px;
+            #initials {
+                font-size: 96px;
+                padding:30px;
+            }
         }
     }
 }
