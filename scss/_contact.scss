@@ -21,8 +21,14 @@
                 border: 2px solid #5bc0de;
                 outline: 0;
                 box-shadow: 0 0 8px rgba(91, 192, 222, 60%);
+                color: black;
             }
-            &:valid {
+            &:not(:placeholder-shown) {
+                background-color: rgb(232, 240, 254) !important;
+                background-image: none !important;
+                color: black;
+            }
+            &:valid, &:active:valid {
                 border: 2px solid forestgreen;
             }
             &:invalid:not(:placeholder-shown) {
@@ -37,8 +43,14 @@
             &:focus:valid {
                 box-shadow: 0 0 8px rgba(34, 139, 34, 60%);
             }
-            
-
+        }
+        label {
+            font-size: 0.875rem;
+            line-height: 1.2;
+            letter-spacing: .5px;
+        }
+        .hide-label {
+            display: none;
         }
         .btn {
             border: 2px solid #292B51;
@@ -47,6 +59,9 @@
             font-weight: 700;
             font-size: 1.1rem;
             margin-top: 15px;
+            &:hover {
+                background-color: lighten(#292B51, 60%);
+            }
         }
     }
     #info {
