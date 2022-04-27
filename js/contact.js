@@ -5,7 +5,7 @@ $("label").addClass('hide-label');
 $("#contact-form form").attr("novalidate", "");
 
 //Regex patterns
-const test = ["^[a-zA-Z-]{3,16}$", "^[a-zA-Z-]{3,16}$", "^([a-zA-Z0-9_\.\+-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$", "[A-Za-z0-9\W]{4,80}", "[A-Za-z0-9\W]+"];
+const test = ["^[a-zA-Z0-9-]{2,16}$", "^[a-zA-Z0-9-]{2,16}$", "^([a-zA-Z0-9_\.\+-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$", "[A-Za-z0-9\W]{4,80}", "[A-Za-z0-9\W]+"];
 
 //Regex test function
 const regexTest = (value, test) => {
@@ -66,8 +66,7 @@ $("#contact-form button").on("click", (e) => {
     //If all inputs are valid...
     if (valid === 5) {
         console.log("All imputs valid. Process form.");
-        $("#contact-form form").hide();
-        $("#contact-form").append('<p class="contact-message">Your message has been submitted.</p>');
+        $("#contact-form").prepend('<p class="contact-message">Your message has been submitted.</p>');
     } else {
         console.log(`${valid}/5 inputs valid.`);
     }
