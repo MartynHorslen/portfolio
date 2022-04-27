@@ -8,7 +8,7 @@ const regexTest = (value, test) => {
     return regex.test(value);
 }
 
-const btnSubmit = e => {
+$("#contact-form button").on("click", (e) => {
     e.preventDefault();
     let valid = 0;
     $("#contact-form input").each((i, element) => {
@@ -33,4 +33,4 @@ const btnSubmit = e => {
     } else {
         console.log(`${valid}/4 inputs valid.`);
     }
-}
+})
