@@ -5,6 +5,11 @@
         display: flex;
         flex-direction: column;
         padding: 15px 30px;
+        fieldset {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+        }
         input, textarea {
             padding: 15px;
             margin-top: 15px;
@@ -126,7 +131,7 @@
     }
     #contact #contact-form form {
         justify-content: space-between;
-        #first-name, #last-name {
+        #first-name, #last-name, fieldset {
         flex-basis: 49%;
         }
     }

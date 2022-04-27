@@ -20,6 +20,7 @@ const btnSubmit = e => {
             console.log(`Form input ${i} failed Regex.`);
         } else {
             console.log('Data validated.');
+            $("label").eq(i).addClass('hide-label');
             valid++;
         }
         $(element).on('input', () => {
