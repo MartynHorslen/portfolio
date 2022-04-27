@@ -66,6 +66,8 @@ $("#contact-form button").on("click", (e) => {
     //If all inputs are valid...
     if (valid === 5) {
         console.log("All imputs valid. Process form.");
+        $("#contact-form form").hide();
+        $("#contact-form").append('<p class="contact-message">Your message has been submitted.</p>');
     } else {
         console.log(`${valid}/5 inputs valid.`);
     }

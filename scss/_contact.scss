@@ -1,6 +1,11 @@
 #contact {
     display: flex;
     flex-direction: column;
+    #contact-form .contact-message {
+        color: green;
+        padding: 50px;
+        text-align: center;
+    }
     #contact-form form {
         display: flex;
         flex-direction: column;
@@ -53,6 +58,7 @@
             font-size: 0.875rem;
             line-height: 1.2;
             letter-spacing: .5px;
+            width: 100%;
         }
         .hide-label {
             display: none;
