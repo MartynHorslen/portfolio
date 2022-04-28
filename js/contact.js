@@ -1,8 +1,8 @@
 //If JavaScript is active, remove the labels.
 $("label").addClass('hide-label');
 
-//Turn off rexex pattern validation as this will now be handled by JavaScript.
-//$("#contact-form form").attr("novalidate", "");
+//Turn off regex pattern validation as this will now be handled by JavaScript.
+$("#contact-form form").attr("novalidate", "");
 
 //Regex patterns
 const test = ["^[a-zA-Z0-9-]{2,16}$", "^[a-zA-Z0-9-]{2,16}$", "[a-z0-9!#$%&'*+\/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+\/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.?)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?", "[A-Za-z0-9\W]{4,80}", "[A-Za-z0-9\W]+"];
@@ -67,12 +67,17 @@ $("#contact-form button").on("click", (e) => {
     //If all inputs are valid..
     if (valid === 5) {
         console.log("All imputs valid. Process form.");
-        if ($(".contact-message").length > 0){
-            $(".contact-message").text(`Your message has been submitted.`);
-        } else {
-            $("#btn").prepend('<p class="contact-message">Your message has been submitted.</p>');
-        }
-    } else {
-        console.log(`${valid}/5 inputs valid.`);
+        //add success message and clear input fields.
+        $("#btn").prepend('<p class="contact-message">Your message has been submitted.</p>');
+        $("#contact-form input").each((i, element) =>{
+            $(element).val("");
+        });
+        $("#contact-form textarea").each((i, element) =>{
+            $(element).val("");
+        });
     }
-})
+});
+//if success message is displaying, hide it when user starts filling out the form again.
+$("#contact-form").on("input", () => {
+    $(".contact-message").hide();
+});
