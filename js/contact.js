@@ -5,7 +5,7 @@ $("label").addClass('hide-label');
 //$("#contact-form form").attr("novalidate", "");
 
 //Regex patterns
-const test = ["^[a-zA-Z0-9-]{2,16}$", "^[a-zA-Z0-9-]{2,16}$", "[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?", "[A-Za-z0-9\W]{4,80}", "[A-Za-z0-9\W]+"];
+const test = ["^[a-zA-Z0-9-]{2,16}$", "^[a-zA-Z0-9-]{2,16}$", "[a-z0-9!#$%&'*+\/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+\/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.?)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?", "[A-Za-z0-9\W]{4,80}", "[A-Za-z0-9\W]+"];
 
 //Regex test function
 const regexTest = (value, testRegex) => {
@@ -67,9 +67,8 @@ $("#contact-form button").on("click", (e) => {
     //If all inputs are valid..
     if (valid === 5) {
         console.log("All imputs valid. Process form.");
-        if ($(".contact-message").length > 0){  
-            successCount++;
-            $(".contact-message").text(`Your message has been submitted again. (${successCount})`);
+        if ($(".contact-message").length > 0){
+            $(".contact-message").text(`Your message has been submitted.`);
         } else {
             $("#btn").prepend('<p class="contact-message">Your message has been submitted.</p>');
         }
