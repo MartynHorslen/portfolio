@@ -28,6 +28,7 @@ header {
             font-weight: 600;
             color: $primary-color;
             text-decoration: none;
+            border-bottom: 5px solid $primary-color;
             &:hover {
                 background-color: $primary-color;
                 color: white;
@@ -103,7 +104,7 @@ main {
     nav > a {
         display: none;
     }
-    @media (min-height: 500px){
+    @media (min-height: 535px){
         header {
             nav > ul {
                 margin-top: 20px;
@@ -120,7 +121,7 @@ main {
     @media (min-height: 600px){
         header {
             nav > ul {
-                margin: 60px 0 20px;
+                margin: 20px 0 20px;
                 li {
                     margin: 15px 0;
                 }
