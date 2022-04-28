@@ -2,17 +2,18 @@
 $("label").addClass('hide-label');
 
 //Turn off rexex pattern validation as this will now be handled by JavaScript.
-$("#contact-form form").attr("novalidate", "");
+//$("#contact-form form").attr("novalidate", "");
 
 //Regex patterns
-const test = ["^[a-zA-Z0-9-]{2,16}$", "^[a-zA-Z0-9-]{2,16}$", "^([a-zA-Z0-9_\.\+-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$", "[A-Za-z0-9\W]{4,80}", "[A-Za-z0-9\W]+"];
+const test = ["^[a-zA-Z0-9-]{2,16}$", "^[a-zA-Z0-9-]{2,16}$", "[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?", "[A-Za-z0-9\W]{4,80}", "[A-Za-z0-9\W]+"];
 
 //Regex test function
-const regexTest = (value, test) => {
-    let regex = new RegExp (test);
+const regexTest = (value, testRegex) => {
+    let regex = new RegExp (testRegex);
     return regex.test(value);
 }
 
+let successCount = 0;
 //Event handler for clicking submit button
 $("#contact-form button").on("click", (e) => {
     //Prevent form from reloading the page.
@@ -63,10 +64,15 @@ $("#contact-form button").on("click", (e) => {
             $(element).attr("style", "none");
         });
     });
-    //If all inputs are valid...
+    //If all inputs are valid..
     if (valid === 5) {
         console.log("All imputs valid. Process form.");
-        $("#btn").prepend('<p class="contact-message">Your message has been submitted.</p>');
+        if ($(".contact-message").length > 0){  
+            successCount++;
+            $(".contact-message").text(`Your message has been submitted again. (${successCount})`);
+        } else {
+            $("#btn").prepend('<p class="contact-message">Your message has been submitted.</p>');
+        }
     } else {
         console.log(`${valid}/5 inputs valid.`);
     }
