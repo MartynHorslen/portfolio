@@ -12,3 +12,8 @@ $( window ).resize(() => {
         $('header nav ul').hide();
     }
 });
+$(document).ready(()=>{
+    if (window.innerWidth < 768){
+        $("nav ul").delay(1200).slideUp();
+    }
+})
