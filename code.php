@@ -1,48 +1,7 @@
-<!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]>      <html class="no-js"><![endif]-->
-<html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Martyn Horslen - Code Examples</title>
-        <meta name="description" content="Code Examples - Coming Soon.">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        
-        <!-- Stylesheets -->
-        <link rel="stylesheet" href="css/style.css">
-
-        <!-- Font Awesome Icons -->
-        <script src="https://kit.fontawesome.com/f0067c17da.js" crossorigin="anonymous"></script>
-    </head>
-    <body>
-        <!--[if lt IE 7]>
-            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
-        <!-- <div class="wrapper"> -->
-            <header>
-                <a href="index.html" id="initials">
-                    M
-                </a>
-                <nav>
-                    <a>Navigation Menu <i class="fa-solid fa-square-caret-down"></i></a>
-                    <ul>
-                        <li><a href="index.html" class="home">Home</a></li>
-                        <li><a href="about.html">About Me</a></li>
-                        <li><a href="index.html#portfolio">My Portfolio</a></li>
-                        <li><a href="code.html">Coding Experience</a></li>
-                        <li><a href="scion.html">Scion Scheme</a></li>
-                        <li><a href="index.html#contact">Contact Me</a></li>
-                    </ul>
-                </nav>
-                <div id="social">
-                    <a href="https://github.com/MartynHorslen" target="_blank"><i class="fa-brands fa-github"></i></a>
-                    <a href="https://www.instagram.com/martyn_horslen/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a>
-                    <a href="https://www.linkedin.com/in/martyn-horslen/" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
-                </div>
-            </header>
+<?php 
+require_once('templates/head.php');
+require_once('templates/header.php');
+?>
             <main>
                 <section class="hero" id="small-hero">
                     <figure>
@@ -105,12 +64,11 @@
                         </div>
                     </div>
                 </section>
-            </main>
-        <!-- </div> -->
-        <script
-  src="https://code.jquery.com/jquery-3.6.0.js"
-  integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
-  crossorigin="anonymous"></script>
-        <script src="js/menu.js"></script>
-    </body>
-</html>
+                <footer>
+                    <a href="#">
+                        <!-- Up arrow icon -->
+                        <i class="fa-solid fa-chevron-up"></i>
+                        <h3>Back To Top</h3>  
+                    </a> 
+                </footer>
+            <?php require_once('templates/footer.php'); ?>
