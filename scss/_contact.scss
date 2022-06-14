@@ -74,6 +74,35 @@
                 background-color: lighten(#292B51, 60%);
             }
         }
+        .err-msg, .success-msg {
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 2px;
+            position: relative;
+            i {
+                position: absolute;
+                right: 16px;
+                top: 16;
+                font-size: 16px;
+                opacity: 0.2;
+                color: #000;
+                &:hover {
+                    opacity: 0.5;
+                }
+            }
+        }
+        .errors {
+            .err-msg {
+                background-color: #f2dede;
+                color: #a94442;
+                border: 1px solid #ebccd1;
+            }
+            .success-msg {
+                color: #155724;
+                background-color: #d4edda;
+                border: 1px solid #c3e6cb;
+            }
+        }
     }
     #info {
         padding: 15px 30px;

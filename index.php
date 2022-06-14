@@ -1,6 +1,7 @@
 <?php 
 require_once('templates/head.php');
 require_once('templates/header.php');
+require_once('inc/contact-form.php');
 ?>
     
             <main>
@@ -96,21 +97,21 @@ require_once('templates/header.php');
                                 ?>
                             </div> 
                             <fieldset>
-                                <input type="text" id="first-name" name="first_name" placeholder="First Name*" pattern="^[a-zA-Z-]{2,16}$" title="Letters and hyphens only. 2-16 characters in lengths." required>
+                                <input type="text" id="first-name" name="first_name" placeholder="First Name*" pattern="^[a-zA-Z-]{2,16}$" title="Letters and hyphens only. 2-16 characters in lengths." value="<?php echo $firstName; ?>" required>
                                 <label for="first-name">Letters and hyphens only. 2-16 characters in lengths.</label>
                             </fieldset>
                             <fieldset>
-                            <input type="text" id="last-name" name="last_name" placeholder="Last Name*" pattern="^[a-zA-Z-]{2,16}$" title="Letters and hyphens only. 2-16 characters in lengths." required>
+                            <input type="text" id="last-name" name="last_name" placeholder="Last Name*" pattern="^[a-zA-Z-]{2,16}$" title="Letters and hyphens only. 2-16 characters in lengths." value="<?php echo $lastName; ?>" required>
                             <label for="last-name">Letters and hyphens only. 2-16 characters in lengths.</label>
                             </fieldset>
-                            <input type="text" id="email" name="email" placeholder="Email Address*" pattern="[a-z0-9!#$%&'*+\/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+\/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.?)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?" title="Most email formats accepted. Use lowercase." required>
+                            <input type="text" id="email" name="email" placeholder="Email Address*" pattern="[a-z0-9!#$%&'*+\/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+\/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9]{2}(?:[a-z0-9-]*[a-z0-9])?" title="Most email formats accepted. Use lowercase." value="<?php echo $email; ?>" required>
                             <label for="email">Most email formats accepted. Use lowercase.</label>
-                            <input type="text" id="subject" name="subject" placeholder="Subject*" pattern="[A-Za-z0-9\W]{4,80}" title="Please enter a descriptive subject line between 4 and 80 characters." required>
+                            <input type="text" id="subject" name="subject" placeholder="Subject*" pattern="[A-Za-z0-9\W]{4,80}" title="Please enter a descriptive subject line between 4 and 80 characters." value="<?php echo $subject; ?>" required>
                             <label for="subject">Please enter a descriptive subject line between 4 and 80 characters.</label>
-                            <textarea name="message" id="message" cols="30" rows="10" placeholder="Message" pattern="[A-Za-z0-9\W]+" required></textarea>
+                            <textarea name="message" id="message" cols="30" rows="10" placeholder="Message" pattern="[A-Za-z0-9\W]+" required><?php echo $message; ?></textarea>
                             <label for="message">Please enter your message.</label>
                             <fieldset id="btn">
-                                <button id="submit" value="submit" class="btn">Submit</button>
+                                <button id="submit" value="submit" name="submit" class="btn">Submit</button>
                             </fieldset>
                         </form>
                     </div>

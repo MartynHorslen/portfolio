@@ -17,7 +17,7 @@ let successCount = 0;
 //Event handler for clicking submit button
 $("#contact-form button").on("click", (e) => {
     //Prevent form from reloading the page.
-    e.preventDefault();
+    //e.preventDefault();
 
     //Count for valid form fields
     let valid = 0;
@@ -67,14 +67,33 @@ $("#contact-form button").on("click", (e) => {
     //If all inputs are valid..
     if (valid === 5) {
         console.log("All imputs valid. Process form.");
-        //add success message and clear input fields.
-        $("#btn").prepend('<p class="contact-message">Your message has been submitted.</p>');
-        $("#contact-form input").each((i, element) =>{
-            $(element).val("");
-        });
-        $("#contact-form textarea").each((i, element) =>{
-            $(element).val("");
-        });
+        //Post to contact-form.php
+        // $.post("inc/contact-form.php", {
+        //     firstName: $('#first-name').val(),
+        //     lastName: $('#last-name').val(),
+        //     email: $('#email').val(),
+        //     subject: $('#subject').val(),
+        //     message: $('#message').val(),
+        //     submit: true
+        // }, function(response) {
+        //     //add success message and clear input fields.
+        //     console.log(response);
+        //     $("#btn").prepend('<p class="contact-message">Your message has been submitted.</p>');
+        //   }, "text"
+        // ).fail(function (response) {
+        //     console.log(response);
+        //     $("#btn").prepend('<p class="contact-error">There was an error.</p>');
+        // });
+
+        
+        // $("#contact-form input").each((i, element) =>{
+        //     $(element).val("");
+        // });
+        // $("#contact-form textarea").each((i, element) =>{
+        //     $(element).val("");
+        // });
+    } else {
+        e.preventDefault();
     }
 });
 //if success message is displaying, hide it when user starts filling out the form again.
