@@ -5,7 +5,6 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
 {
     $errors = [];
     
-
     //Check if contact-form was the form that was submitted and all fields were set.
     if (isset($_POST['submit'])){
         if(!isset($_POST['first_name']) || $_POST['first_name'] == ""){
@@ -51,6 +50,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
             $errors[] = "Message does meet required format.";
         }
             
+        //If no errors
         if(empty($errors)){
             //Add to database
             include 'connection.php';
@@ -64,14 +64,16 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
 
             $result = $stmt->execute();
 
+            //If query doesn't insert to database correctly
             if ($db->lastInsertId() == 0){
+                //add errors to display
                 $errors[] = "There was an error sending your messages. Please try again.";
             } else {
+                //add success message and empty form fields.
                 $success = "Your message has been sent.";
                 $firstName = $lastName = $email = $subject = $message = "";
             }
         }
     }
-
 }
 ?>

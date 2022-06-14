@@ -67,32 +67,9 @@ $("#contact-form button").on("click", (e) => {
     //If all inputs are valid..
     if (valid === 5) {
         console.log("All imputs valid. Process form.");
-        //Post to contact-form.php
-        // $.post("inc/contact-form.php", {
-        //     firstName: $('#first-name').val(),
-        //     lastName: $('#last-name').val(),
-        //     email: $('#email').val(),
-        //     subject: $('#subject').val(),
-        //     message: $('#message').val(),
-        //     submit: true
-        // }, function(response) {
-        //     //add success message and clear input fields.
-        //     console.log(response);
-        //     $("#btn").prepend('<p class="contact-message">Your message has been submitted.</p>');
-        //   }, "text"
-        // ).fail(function (response) {
-        //     console.log(response);
-        //     $("#btn").prepend('<p class="contact-error">There was an error.</p>');
-        // });
-
-        
-        // $("#contact-form input").each((i, element) =>{
-        //     $(element).val("");
-        // });
-        // $("#contact-form textarea").each((i, element) =>{
-        //     $(element).val("");
-        // });
+        //let form submit so the php can run on reload.
     } else {
+        // prevent reload and let the js above handle the errors.
         e.preventDefault();
     }
 });

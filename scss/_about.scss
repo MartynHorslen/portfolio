@@ -1,55 +1,51 @@
-#about {
-    margin-top: 65px;
-    .hero figure figcaption {
-        justify-content: flex-end;
-        
-        h1 {
-            margin-top: 25px;
-            margin-bottom: 25px;
+.hero figure figcaption {
+    justify-content: flex-start;
+    h1 {
+        margin-top: 25px;
+        margin-bottom: 25px;
+    }
+    h2 {
+        margin-bottom: 0;
+    }
+    #intro {
+        padding: 0 25px;
+        font-size: 1rem;
+        h4 {
+            margin-top: 35px;
+            padding-bottom: 10px;
+            line-height: 1.5rem;
+            text-align: left;
         }
-        h2 {
-            margin-bottom: 0;
+        i { 
+            color: white;
+            text-decoration: none;
         }
-        #intro {
-            padding: 0 25px;
-            font-size: 1rem;
-            h4 {
-                margin-top: 35px;
-                padding-bottom: 10px;
-                line-height: 1.5rem;
-                text-align: left;
+        a, a:visited {
+            color:$primary-color;
+            text-decoration: none;
+        }
+        p {
+            text-align: left;
+            padding-bottom: 10px;
+            line-height: 1.1;
+        }
+        h3, .personal {
+            padding-bottom: 0px;            
+        }
+        .pro-links {
+            text-align: left;
+            margin: 0 0 25px;
+            a {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
             }
-            i { 
-                color: white;
-                text-decoration: none;
+            .cv, .github {
+                padding: 5px 15px;
+                font-size: 2rem;
             }
-            a, a:visited {
-                color:$primary-color;
-                text-decoration: none;
-            }
-            p {
-                text-align: left;
-                padding-bottom: 10px;
-                line-height: 1.1;
-            }
-            h3, .personal {
-                padding-bottom: 0px;            
-            }
-            .pro-links {
-                text-align: left;
-                margin: 0 0 25px;
-                a {
-                    display: flex;
-                    flex-direction: row;
-                    align-items: center;
-                }
-                .cv, .github {
-                    padding: 5px 15px;
-                    font-size: 2rem;
-                }
-                span {
-                    align-content: center;
-                }
+            span {
+                align-content: center;
             }
         }
     }
