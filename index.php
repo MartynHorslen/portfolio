@@ -82,7 +82,19 @@ require_once('templates/header.php');
                         <p>You can expect a response to all enquiries within 1 working day between the hours of 9 AM and 5 PM GMT.</p>
                     </div>
                     <div id="contact-form">
-                        <form> 
+                        <form method="POST" action="#contact-form">
+                            <div class="errors">
+                                <?php
+                                if(!empty($errors)){
+                                    foreach($errors as $error){
+                                        echo '<div class="err-msg">' . $error . '<i class="fa-solid fa-xmark"></i></div>';
+                                    }
+                                }
+                                if(!empty($success)){
+                                    echo '<div class="success-msg">' . $success . '<i class="fa-solid fa-xmark"></i></div>';
+                                }
+                                ?>
+                            </div> 
                             <fieldset>
                                 <input type="text" id="first-name" name="first_name" placeholder="First Name*" pattern="^[a-zA-Z-]{2,16}$" title="Letters and hyphens only. 2-16 characters in lengths." required>
                                 <label for="first-name">Letters and hyphens only. 2-16 characters in lengths.</label>
