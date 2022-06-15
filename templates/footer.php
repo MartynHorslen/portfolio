@@ -8,6 +8,10 @@
         <script src="js/type-effect.js"></script>
         <script src="js/menu.js"></script>
         <script src="js/contact.js"></script>
-        <script src="js/treehouse.js"></script>
+        <?php
+        if ($_SERVER['REQUEST_URI'] == "/scion.php"){
+            echo '<script src="js/treehouse.js"></script>';
+        }
+        ?>
     </body>
 </html>

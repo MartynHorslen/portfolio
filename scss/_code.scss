@@ -34,6 +34,10 @@
             }
         }
     }
+    .italics {
+        font-style: italic;
+        font-size: 0.85rem;
+    }
     .table {
         overflow-x: scroll;
         width: 100%;
@@ -141,7 +145,8 @@
 
 @media (min-width: 992px){
     .code-example {
-        //max-width: 780px;
+        width: 90%;
+    padding: 30px;
     }
 }
 
