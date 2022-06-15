@@ -78,7 +78,7 @@ require_once('inc/contact-form.php');
                 <label for="last-name">Letters and hyphens only. 2-16 characters in lengths.</label>
             </fieldset>
 
-            <input type="text" id="email" name="email" placeholder="Email Address*" pattern="[a-z0-9!#$%&'*+\/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+\/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9]{2}(?:[a-z0-9-]*[a-z0-9])?" title="Most email formats accepted. Use lowercase." value="<?php echo $email; ?>" required>
+            <input type="text" id="email" name="email" placeholder="Email Address*" pattern="^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?.)+[a-z0-9]{2}(?:[a-z0-9-]*[a-z0-9])?$" title="Most email formats accepted. Use lowercase." value="<?php echo $email; ?>" required>
             <label for="email">Most email formats accepted. Use lowercase.</label>
 
             <input type="text" id="subject" name="subject" placeholder="Subject*" pattern="[A-Za-z0-9\W]{4,80}" title="Please enter a descriptive subject line between 4 and 80 characters." value="<?php echo $subject; ?>" required>

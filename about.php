@@ -6,7 +6,7 @@ require_once('templates/header.php');
 <section class="hero">
     <figure>
         <img class="full" src="img/pexels-josh-sorenson-9469517.jpg" alt="Background of keyboard set on a desk." />
-        <figcaption>
+        <figcaption id="about">
             <h1>About Me</h1>
             <h2>Martyn Horslen</h2>
             <div id="intro">
