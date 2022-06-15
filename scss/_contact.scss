@@ -150,6 +150,9 @@
         #contact-form {
             flex-basis: 70%;
             max-width: 540px;
+            form .errors {
+                width: 100%;
+            }
         }
     }
 }
