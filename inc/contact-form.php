@@ -5,7 +5,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
 {
     $errors = [];
     
-    //Check if contact-form was the form that was submitted and all fields were set.
+    //Check if contact-form was the form that was submitted and all fields were set/not empty.
     if (isset($_POST['submit'])){
         if(!isset($_POST['first_name']) || $_POST['first_name'] == ""){
             $errors['first_name'] = "The first name field is required.";

@@ -6,7 +6,7 @@ require_once('templates/header.php');
     <figure>
         <img src="img/pexels-stanislav-kondratiev-10816120.jpg" alt="Background of programming code."/>
         <figcaption>
-            <h1>Coding Examples</h1>
+            <h1>Code Examples</h1>
         </figcaption>
     </figure>
 </section>
@@ -16,7 +16,9 @@ require_once('templates/header.php');
         <p>The objective for this challenge was to create a query with formatted outputs that includes a subquery and that is sorted by a value.</p>
         <p>I opted to use a <a href="https://www.w3resource.com/sql-exercises/movie-database-exercise/subqueries-exercises-on-movie-database.php" target="_blank">movie database</a> and, after working through a couple of practice examples, naturally got curious to see what the first movie in the database was to cast a female actress. This made for a good query for the challenge.</p>
         <p>The database structure is as follows:</p>
-        <img src="img/movie-database.png" alt="Relational structure for a movie database"/>
+        <div class="img">
+            <img src="img/movie-database.png" alt="Relational structure for a movie database"/>
+        </div>
         <p>There are only 3 relavent tables needed for a query like mine; 'movies', 'movie_cast' and 'actor'.</p>
         <p>My query was as follows:</p>
         <div class="code-block">
@@ -61,6 +63,72 @@ require_once('templates/header.php');
                 </tbody>
             </table>
         </div>
+    </div>
+    <div class="code-example">
+        <h3>PHP Reflection</h3>
+        <p>For part of my Scion Coalition Scheme training, I was tasked with converting both my Netmatters reflection and my portfolio to PHP. This was to include contact forms and sections of content that interact with a database - such as the Netmatters news section.</p>
+        <p>Below is a code snippet that demonstrates the server-side filtering, validation and storage of user input from the Netmatters contact form.</p>
+
+        <div class="code-block">
+            <span class="keyword">&lt;?php</span><br />
+            <span class="comment">//Check if there is POST data that has been submitted.</span><br />
+            <span class="php">if</span><span class="bracket">(</span><span class="var">$_SERVER</span><span class="bracket">[</span><span class="text">'REQUEST_METHOD'</span><span class="bracket">]</span> == <span class="text">'POST'</span><span class="bracket">)</span><br />
+            <span class="bracket">{</span><br />
+                <span class="indented"></span><span class="comment">//Set empty errors array.</span><br />
+                <span class="indented"></span><span class="var">$errors</span> = <span class="bracket">[]</span>;<br />
+                <br />
+                <span class="indented"></span><span class="comment">//Check if contact-form was the form that was submitted</span><br />
+                <span class="indented"></span><span class="php">if</span> <span class="bracket">(</span><span class="func">isset</span><span class="bracket">(</span><span class="var">$_POST</span><span class="bracket">[</span><span class="text">'contact-btn'</span><span class="bracket">]</span><span class="bracket">)</span><span class="bracket">)</span><span class="bracket">{</span><br /><br />
+                    <span class="indented-2"></span><span class="comment">//Check all input fields were posted and not empty strings.</span><br />
+                    <span class="indented-2"></span><span class="php">if</span><span class="bracket">(</span><span class="func">!isset</span><span class="bracket">(</span><span class="var">$_POST</span><span class="bracket">[</span><span class="text">'full_name'</span><span class="bracket">]</span><span class="bracket">)</span> || <span class="var">$_POST</span><span class="bracket">[</span><span class="text">'full_name'</span><span class="bracket">]</span> == ""<span class="bracket">)</span><span class="bracket">{</span><br /><br />
+                        <span class="indented-3"></span><span class="comment">//If empty/not set, add error to the array.</span><br />
+                        <span class="indented-3"></span><span class="var">$errors</span><span class="bracket">[</span><span class="text">'name'</span><span class="bracket">]</span> = <span class="text">"The name field is required."</span>;<br />
+                        <span class="indented-2"></span><span class="bracket">}</span><br />
+                        <span class="indented-2"></span><span class="comment">/*** Repeat for email, telephone, subject and message. ***/</span><br /><br /><br />
+                        <span class="indented-2"></span><span class="comment">//Filter inputs.</span><br />
+                        <span class="indented-2"></span><span class="var">$name</span> = <span class="func">trim</span><span class="bracket">(</span><span class="func">filter_input</span><span class="bracket">(</span>INPUT_POST, <span class="text">'full_name'</span>, FILTER_SANITIZE_FULL_SPECIAL_CHARS<span class="bracket">)</span><span class="bracket">)</span>;<br />
+                        <span class="indented-2"></span><span class="var">$email</span> = <span class="func">trim</span><span class="bracket">(</span><span class="func">filter_input</span><span class="bracket">(</span>INPUT_POST, <span class="text">'email'</span>, FILTER_SANITIZE_EMAIL<span class="bracket">)</span><span class="bracket">)</span>;<br />
+                        <span class="indented-2"></span><span class="var">$telephone</span> = <span class="func">trim</span><span class="bracket">(</span><span class="func">filter_input</span><span class="bracket">(</span>INPUT_POST, <span class="text">'telephone'</span>, FILTER_SANITIZE_FULL_SPECIAL_CHARS<span class="bracket">)</span><span class="bracket">)</span>;<br />
+                        <span class="indented-2"></span><span class="comment">/*** Repeat for subject and message. ***/</span><br /><br /><br />
+                        <span class="indented-2"></span><span class="comment">//Regex Validation<br />
+                        <span class="indented-2"></span>//If input doesn't pass regex test and there isn't already an error for this field...</span><br />
+                        <span class="indented-2"></span><span class="php">if</span><span class="bracket">(</span><span class="func">!preg_match</span><span class="bracket">(</span><span class="text">"</span></span><span class="regex">/[a-z0-9!#$%&'*+\/=?^_`\"{|}~-]+(?:\.[a-z0-9!#$%&'*+\/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9]{2}(?:[a-z0-9-]*[a-z0-9])?/</span><span class="text">"</span>, <span class="var"> $email</span><span class="bracket">)</span> && <span class="func">!isset</span><span class="bracket">(</span><span class="var">$errors</span><span class="bracket">[</span><span class="text">'email'</span><span class="bracket">]</span><span class="bracket">)</span><span class="bracket">)</span><span class="bracket">{</span><br />
+                            <span class="indented-3"></span><span class="var">$errors</span><span class="bracket">[]</span> = <span class="text">"Email does meet required format."</span>;<br />
+                        <span class="indented-2"></span><span class="bracket">}</span><br />
+                        <span class="indented-2"></span><span class="comment">/*** Repeat for full_name, telephone, subject and message using relavent regex. ***/</span><br /><br /><br />
+                        <span class="indented-2"></span><span class="comment">//If no errors</span>   <br />
+                        <span class="indented-2"></span><span class="php">if</span><span class="bracket">(</span><span class="func">empty</span><span class="bracket">(</span><span class="var">$errors</span><span class="bracket">)</span><span class="bracket">)</span><span class="bracket">{</span><br />
+                            <span class="indented-3"></span><span class="comment">//Add to database</span><br />
+                            <span class="indented-3"></span>include <span class="text">'connection.php'</span>;<br />
+                            <span class="indented-3"></span><span class="var">$query</span> = <span class="text">"</span><span class="keyword">INSERT INTO</span> <span class="text">contact <span class="bracket">(</span>`name`, `email`, telephone, `subject`, `message`, marketing<span class="bracket">)</span></span> <span class="keyword">VALUES</span> <span class="text"><span class="bracket">(</span>?, ?, ?, ?, ?, ?<span class="bracket">)</span>"</span>; <br />
+                            <span class="indented-3"></span><span class="var">$stmt</span> = <span class="var">$db</span>-><span class="func">prepare</span><span class="bracket">(</span><span class="var">$query</span><span class="bracket">)</span>;<br />
+                            <span class="indented-3"></span><span class="var">$stmt</span>-><span class="func">bindParam</span><span class="bracket">(</span>1, <span class="var">$name</span>, <span class="pdo">PDO</span>::PARAM_STR<span class="bracket">)</span>;<br />
+                            <span class="indented-3"></span><span class="var">$stmt</span>-><span class="func">bindParam</span><span class="bracket">(</span>2, <span class="var">$email</span>, <span class="pdo">PDO</span>::PARAM_STR<span class="bracket">)</span>;<br />
+                            <span class="indented-3"></span><span class="var">$stmt</span>-><span class="func">bindParam</span></span><span class="bracket">(</span>3, <span class="var">$telephone</span>, <span class="pdo">PDO</span>::PARAM_STR<span class="bracket">)</span>;<br />
+                            <span class="indented-3"></span><span class="var">$stmt</span>-><span class="func">bindParam</span><span class="bracket">(</span>4, <span class="var">$subject</span>, <span class="pdo">PDO</span>::PARAM_STR<span class="bracket">)</span>;<br />
+                            <span class="indented-3"></span><span class="var">$stmt</span>-><span class="func">bindParam</span><span class="bracket">(</span>5, <span class="var">$message</span>, <span class="pdo">PDO</span>::PARAM_STR<span class="bracket">)</span>;<br />
+                            <span class="indented-3"></span><span class="var">$stmt</span>-><span class="func">bindParam</span><span class="bracket">(</span>6, <span class="var">$marketing</span>, <span class="pdo">PDO</span>::PARAM_INT<span class="bracket">)</span>;<br />
+                            <span class="indented-3"></span><br />
+                            <span class="indented-3"></span><span class="var">$result</span> = <span class="var">$stmt</span>-><span class="func">execute</span><span class="bracket">(</span><span class="bracket">)</span>;<br />
+                            <span class="indented-3"></span><br />
+                            <span class="indented-3"></span><span class="comment">//If query doesn't get successfully executed</span><br />
+                            <span class="indented-3"></span><span class="php">if</span> <span class="bracket">(</span><span class="var">$db</span>-><span class="func">lastInsertId</span></span><span class="bracket">(</span><span class="bracket">)</span> == 0<span class="bracket">)</span><span class="bracket">{</span><br />
+                                <span class="indented-4"></span><span class="comment">//Add to errors array</span><br />
+                                <span class="indented-4"></span><span class="var">$errors</span><span class="bracket">[]</span> = <span class="text">"There was an error sending your messages. Please try again."</span>;<br />
+                            <span class="indented-3"></span><span class="bracket">}</span> <span class="php">else</span> <span class="bracket">{</span><br />
+                                <span class="indented-4"></span><span class="comment">//Add a success message</span><br />
+                                <span class="indented-4"></span><span class="var">$success</span> = <span class="text">"Your message has been sent."</span>;<br />
+                                <span class="indented-4"></span><span class="comment">//Clear field variables so that form empties user's input.</span><br />
+                                <span class="indented-4"></span><span class="var">$name</span> = <span class="var">$email</span> = <span class="var">$telephone</span> = <span class="var">$subject</span> = <span class="var">$message</span> = <span class="text">""</span>;<br />
+                                <span class="indented-4"></span><span class="var">$marketing</span> = 0;<br />
+                            <span class="indented-3"></span><span class="bracket">}</span><br />
+                        <span class="indented-2"></span><span class="bracket">}</span><br />
+                    <span class="indented"></span><span class="bracket">}</span><br />
+                <span class="bracket">}</span><br />
+            <span class="keyword">php?&gt;</span>
+        </div>
+
+
     </div>
 </section>
 <footer>

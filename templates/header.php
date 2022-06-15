@@ -12,7 +12,7 @@
                 <li><a href="index.php" class="home">Home</a></li>
                 <li><a href="about.php">About Me</a></li>
                 <li><a href="index.php#portfolio">My Portfolio</a></li>
-                <li><a href="code.php">Coding Experience</a></li>
+                <li><a href="code.php">Code Examples</a></li>
                 <li><a href="scion.php">SCS Scheme</a></li>
                 <li><a href="index.php#contact">Contact Me</a></li>
             </ul>
