@@ -9,7 +9,7 @@
     scroll-behavior: smooth;
 }
 html, body {
-    overflow-x:clip;
+    overflow:clip;
 }
 @-moz-document url-prefix() {
     html,body{overflow-x: hidden !important;}
