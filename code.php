@@ -68,7 +68,7 @@ require_once('templates/header.php');
         <h3>PHP Reflection</h3>
         <p>For part of my Scion Coalition Scheme training, I was tasked with converting both my Netmatters reflection and my portfolio to PHP. This was to include contact forms and sections of content that interact with a database - such as the Netmatters news section.</p>
         <p>Below is a code snippet that demonstrates the server-side filtering, validation and storage of user input from the Netmatters contact form.</p>
-        <p class="italics">To save space, some repetitive code has been ommited.</p>
+        <p class="italics">To save space, some repetitive code has been omitted.</p>
 
         <div class="code-block">
             <span class="keyword">&lt;?php</span><br />

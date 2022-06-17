@@ -131,37 +131,31 @@
     }
 }
 
-@media (min-width: 576px){
-    .code-example {
-        //max-width: 560px;
-    }
-}
-
-@media (min-width: 768px){
-    .code-example {
-        //max-width: 550px;
-    }
-}
-
 @media (min-width: 992px){
     .code-example {
         width: 90%;
-    padding: 30px;
+        padding: 30px;
     }
 }
 
-@media (min-width: 1200px){
+@media (min-width: 1260px){
+    #examples {
+        gap: 30px;
+        padding: 30px;
+        .code-example {
+            margin: none;
+        }
+    }
+}
+
+@media (min-width: 1500px){
     #examples {
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
-        gap: 30px;
-        padding: 30px;
         justify-content: space-between;
         .code-example {
-            //max-width: 1180px;
             width: 48%;
-            margin: none;
         }
     }
 }

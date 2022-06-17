@@ -38,7 +38,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
             $errors[] = "Last name does meet required format.";
         }
 
-        if(!preg_match("/[a-z0-9!#$%&'*+\/=?^_`\"{|}~-]+(?:\.[a-z0-9!#$%&'*+\/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9]{2}(?:[a-z0-9-]*[a-z0-9])?/", $email) && !isset($errors['email'])){
+        if(!preg_match("/^[a-z0-9!#$%&'*+\/=?^_`\"{|}~-]+(?:\.[a-z0-9!#$%&'*+\/=?^_`{|}~-]+)*@(?:[a-z0-9\[](?:[a-z0-9-]*[a-z0-9])?(?:\.){0,1})+[a-z]{2}(?:[a-z0-9-]*[a-z0-9])?$/", $email) && !isset($errors['email'])){
             $errors[] = "Email does meet required format.";
         }
         
