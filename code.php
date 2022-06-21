@@ -126,7 +126,7 @@ require_once('templates/header.php');
                         <span class="indented-2"></span><span class="bracket">}</span><br />
                     <span class="indented"></span><span class="bracket">}</span><br />
                 <span class="bracket">}</span><br />
-            <span class="keyword">php?&gt;</span>
+            <span class="keyword">?&gt;</span>
         </div>
 
 
