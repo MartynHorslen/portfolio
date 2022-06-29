@@ -21,7 +21,17 @@ require_once('inc/contact-form.php');
 <section id="portfolio">
     <div class="project">
         <figure>
-            <img src="img/netmatters-project.jpg" alt="">
+            <img src="img/laravel.png" alt="Laravel Dashboard Project">
+        </figure>
+        <h2>Laravel Dashboard</h2>
+        <p>(In Progress)</p>
+        <p><a href="https://martyn-horslen.netmatters-scs.co.uk/laravel-dashboard/" target="_blank">View Project</a> <i class="fa-solid fa-arrow-right"></i></p>
+        <p><a href="https://github.com/MartynHorslen/laravel-dashboard" target="_blank">View Repository <i class="fa-solid fa-arrow-right"></i></a></p>
+    </div>
+
+    <div class="project">
+        <figure>
+            <img src="img/netmatters-project.jpg" alt="Netmatters homepage recreation project.">
         </figure>
         <h2>Netmatters</h2>
         <p><a href="https://netmatters.martyn-horslen.netmatters-scs.co.uk/" target="_blank">View Project <i class="fa-solid fa-arrow-right"></i></a></p>
@@ -34,15 +44,6 @@ require_once('inc/contact-form.php');
         <h2>Image Search</h2>
         <p><a href="https://image-search.martyn-horslen.netmatters-scs.co.uk/" target="_blank">View Project</a> <i class="fa-solid fa-arrow-right"></i></p>
         <p><a href="https://github.com/MartynHorslen/js-array" target="_blank">View Repository <i class="fa-solid fa-arrow-right"></i></a></p>
-        
-    </div>
-    <div class="project coming-soon">
-        <figure>
-            <img src="https://loremflickr.com/800/600/website?random=3" alt="">
-        </figure>
-        <h2>Coming Soon</h2>
-        <p><a href="" target="_blank">View Project</a> <i class="fa-solid fa-arrow-right"></i></p>
-        <p><a href="" target="_blank">View Repository <i class="fa-solid fa-arrow-right"></i></a></p>
         
     </div>
 </section>
