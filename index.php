@@ -25,7 +25,7 @@ require_once('inc/contact-form.php');
         </figure>
         <h2>Laravel Dashboard</h2>
         <p>(In Progress)</p>
-        <p><a href="https://martyn-horslen.netmatters-scs.co.uk/laravel-dashboard/" target="_blank">View Project</a> <i class="fa-solid fa-arrow-right"></i></p>
+        <p><a href="http://laravel-dashboard.martyn-horslen.netmatters-scs.co.uk/companies" target="_blank">View Project</a> <i class="fa-solid fa-arrow-right"></i></p>
         <p><a href="https://github.com/MartynHorslen/laravel-dashboard" target="_blank">View Repository <i class="fa-solid fa-arrow-right"></i></a></p>
     </div>
 
