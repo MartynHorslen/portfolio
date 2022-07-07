@@ -135,7 +135,7 @@ require_once('templates/header.php');
         <h3>Laravel Reflection</h3>
         <p>This project was to build an admin dashboard that would allow a hypothetical company to create, read, update and delete (CRUD functionality) records for client companies and their employees.
         <p>The Laravel app itself should have: basic authorisation, make use of database seeders and migrations, use Laravel storage with public access to logos and use the 7 RESTful actions.</p>
-        <p>The code example below shows some form validation and file storage. For more Laravel code examples from this project, please review my <a href="https://github.com/MartynHorslen/laravel-dashboard" target="_blank">Laravel repository</a>.</p>
+        <p>The code example below shows the form validation and file storage for creating a company. For more Laravel code examples from this project, please review my <a href="https://github.com/MartynHorslen/laravel-dashboard" target="_blank">Laravel repository</a>.</p>
         <div class="code-block">
         <span class="keyword">public function</span> <span class="func">store</span><span class="bracket">()<br/>
             {</span><br/>
