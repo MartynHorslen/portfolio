@@ -131,6 +131,38 @@ require_once('templates/header.php');
 
 
     </div>
+    <div class="code-example">
+        <h3>Laravel Reflection</h3>
+        <p>This project is to build an admin dashboard that would allow a hypothetical company to create, read, update and delete (CRUD functionality) records for client companies and employees.
+The Laravel app itself should have: basic authorisation, make use of database seeders and migrations, use laravel storage with public access to logosand use the 7 RESTful actions.</p>
+        <div class="code-block">
+        <span class="keyword">public function</span> <span class="func">store</span><span class="bracket">()<br/>
+            {</span><br/>
+                $attributes = request<span class="bracket">()</span>->validate<span class="bracket">([</span><br/>
+                    'name' => <span class="bracket">[</span>'required', Rule::unique('companies', 'name'), 'min:2', 'max:255'],<br/>
+                    'logo' => 'required|image|dimensions:min_width=100,min_height=100',<br/>
+                    'website' => ['max:255', 'regex:/^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/'],<br/>
+                    'email' => ['required', Rule::unique('companies', 'email'), 'email', 'min:2', 'max:255'],<br/>
+                ]);<br/>
+                <br/>
+                if(isset($attributes['logo'])){<br/>
+                    $attributes['logo'] = '/storage/' . request()->file('logo')->store('logo');<br/>
+                }<br/>
+                <br/>
+                $created = Company::create($attributes);<br/>
+                <br/>
+                if($created){<br/>
+                    session()->flash('success', 'Company Created!');<br/>
+                    return redirect('/companies');<br/>
+                } else {<br/>
+                    session()->flash('success', 'Company could not be created!');<br/>
+                    return redirect('/companies/create');<br/>
+                }  <br/>
+            }<br/>
+        </div>
+
+
+    </div>
 </section>
 <footer>
     <a href="#">
