@@ -133,35 +133,35 @@ require_once('templates/header.php');
     </div>
     <div class="code-example">
         <h3>Laravel Reflection</h3>
-        <p>This project is to build an admin dashboard that would allow a hypothetical company to create, read, update and delete (CRUD functionality) records for client companies and employees.
-The Laravel app itself should have: basic authorisation, make use of database seeders and migrations, use laravel storage with public access to logosand use the 7 RESTful actions.</p>
+        <p>This project was to build an admin dashboard that would allow a hypothetical company to create, read, update and delete (CRUD functionality) records for client companies and their employees.
+        <p>The Laravel app itself should have: basic authorisation, make use of database seeders and migrations, use Laravel storage with public access to logos and use the 7 RESTful actions.</p>
+        <p>The code example below shows some form validation and file storage. For more Laravel code examples from this project, please review my <a href="https://github.com/MartynHorslen/laravel-dashboard" target="_blank">Laravel repository</a>.</p>
         <div class="code-block">
         <span class="keyword">public function</span> <span class="func">store</span><span class="bracket">()<br/>
             {</span><br/>
-                $attributes = request<span class="bracket">()</span>->validate<span class="bracket">([</span><br/>
-                    'name' => <span class="bracket">[</span>'required', Rule::unique('companies', 'name'), 'min:2', 'max:255'],<br/>
-                    'logo' => 'required|image|dimensions:min_width=100,min_height=100',<br/>
-                    'website' => ['max:255', 'regex:/^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/'],<br/>
-                    'email' => ['required', Rule::unique('companies', 'email'), 'email', 'min:2', 'max:255'],<br/>
-                ]);<br/>
+                <span class="indented"></span><span class="var">$attributes</span> = <span class="func">request</span><span class="bracket">()</span>-><span class="func">validate</span><span class="bracket">([</span><br/>
+                <span class="indented-2"></span><span class="text">'name'</span> => <span class="bracket">[</span><span class="text">'required'</span>, <span class="pdo">Rule::</span><span class="func">unique</span><span class="bracket">(</span><span class="text">'companies'</span>, <span class="text">'name'</span><span class="bracket">)</span>, <span class="text">'min:2'</span>, <span class="text">'max:255'</span><span class="bracket">]</span>,<br/>
+                <span class="indented-2"></span><span class="text">'logo'</span> => <span class="text">'required|image|dimensions:min_width=100,min_height=100'</span>,<br/>
+                <span class="indented-2"></span><span class="text">'website'</span> => <span class="bracket">[</span><span class="text">'max:255'</span>, <span class="text">'regex:/^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/'</span><span class="bracket">]</span>,<br/>
+                <span class="indented-2"></span><span class="text">'email'</span> => <span class="bracket">[</span><span class="text">'required'</span>, <span class="pdo">Rule::</span><span class="bracket">(</span><span class="text">'companies'</span>, <span class="text">'email'</span><span class="bracket">)</span>, <span class="text">'email'</span>, <span class="text">'min:2'</span>, <span class="text">'max:255'</span><span class="bracket">]</span>,<br/>
+                <span class="indented"></span><span class="bracket">])</span>;<br/>
                 <br/>
-                if(isset($attributes['logo'])){<br/>
-                    $attributes['logo'] = '/storage/' . request()->file('logo')->store('logo');<br/>
-                }<br/>
+                <span class="indented"></span><span class="php">if</span><span class="bracket">(</span><span class="func">isset</span><span class="bracket">(</span><span class="var">$attributes</span><span class="bracket">[</span><span class="text">'logo'</span><span class="bracket">])){</span><br/>
+                    <span class="indented-2"></span><span class="var">$attributes</span><span class="bracket">[</span><span class="text">'logo'</span><span class="bracket">]</span> = <span class="text">'/storage/'</span> . <span class="func">request</span><span class="bracket">()</span>-><span class="func">file</span><span class="bracket">(</span><span class="text">'logo'</span><span class="bracket">)</span>-><span class="func">store</span><span class="bracket">(</span><span class="text">'logo'</span><span class="bracket">)</span>;<br/>
+                <span class="indented"></span><span class="bracket">}</span><br/>
                 <br/>
-                $created = Company::create($attributes);<br/>
+                <span class="indented"></span><span class="var">$created</span> = <span class="pdo">Company::</span><span class="func">create</span><span class="bracket">(</span><span class="var">$attributes</span><span class="bracket">)</span>;<br/>
                 <br/>
-                if($created){<br/>
-                    session()->flash('success', 'Company Created!');<br/>
-                    return redirect('/companies');<br/>
-                } else {<br/>
-                    session()->flash('success', 'Company could not be created!');<br/>
-                    return redirect('/companies/create');<br/>
-                }  <br/>
-            }<br/>
+                <span class="indented"></span><span class="php">if</span><span class="bracket">(</span><span class="var">$created</span><span class="bracket">){</span><br/>
+                    <span class="indented-2"></span><span class="func">session</span><span class="bracket">()</span>-><span class="func">flash</span><span class="bracket">(</span><span class="text">'success'</span>, <span class="text">'Company Created!'</span><span class="bracket">)</span>;<br/>
+                    <span class="indented-2"></span><span class="php">return</span> <span class="func">redirect</span><span class="bracket">(</span><span class="text">'/companies'</span><span class="bracket">)</span>;<br/>
+                    <span class="indented"></span><span class="bracket">}</span> <span class="php">else</span> <span class="bracket">{</span><br/>
+                        <span class="indented-2"></span><span class="func">session</span><span class="bracket">()</span>-><span class="func">flash</span><span class="bracket">(</span><span class="text">'success'</span>, <span class="text">'Company could not be created!',/
+                            <span class="bracket">)</span>;<br/>
+                        <span class="indented-2"></span><span class="php">return</span> <span class="func">redirect</span><span class="bracket">(</span><span class="text">'/companies/create'</span><span class="bracket">)</span>;<br/>
+                <span class="indented"></span><span class="bracket">}</span>  <br/>
+            <span class="bracket">}</span><br/>
         </div>
-
-
     </div>
 </section>
 <footer>
