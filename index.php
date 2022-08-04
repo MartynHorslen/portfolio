@@ -21,6 +21,15 @@ require_once('inc/contact-form.php');
 <section id="portfolio">
     <div class="project">
         <figure>
+            <img src="img/vue.png" alt="Vue SPA Project">
+        </figure>
+        <h2>Vue SPA</h2>
+        <p><a href="https://vue.martyn-horslen.netmatters-scs.co.uk/" target="_blank">View Project</a> <i class="fa-solid fa-arrow-right"></i></p>
+        <p><a href="https://github.com/MartynHorslen/vue-spa" target="_blank">View Repository <i class="fa-solid fa-arrow-right"></i></a></p>
+    </div>
+
+    <div class="project">
+        <figure>
             <img src="img/laravel.png" alt="Laravel Dashboard Project">
         </figure>
         <h2>Laravel Dashboard</h2>
