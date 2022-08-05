@@ -31,6 +31,14 @@ require_once('templates/header.php');
                 
                     <div id="skills" class="right">
                         <div>
+                            <i class="fa-brands fa-vuejs"></i>
+                            <span>Vue</span>
+                        </div>
+                        <div>
+                            <i class="fa-brands fa-laravel"></i>
+                            <span>Laravel</span>
+                        </div>
+                        <div>
                             <i class="fa-brands fa-html5"></i>
                             <span>HTML5</span>
                         </div>
