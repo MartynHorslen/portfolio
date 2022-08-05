@@ -3,6 +3,7 @@
     flex-direction: column;
     figure {
         position: relative;
+        width: 100%;
         figcaption {
             text-align: center;
             position: absolute;
@@ -26,7 +27,7 @@
             }
         }
         img {
-            width: 100vw;
+            width: 100%;
             height: calc(100vh - 64px);
             object-fit: cover;
             filter: brightness(30%);
@@ -62,7 +63,7 @@
         figure {
             img {
                 height: 100vh; 
-                width: calc(100vw - 200px);
+                width: 100%;
             }
         }
     }

@@ -129,6 +129,15 @@
             color: #e9a615;
         }
     }
+    pre[class*=language-] {
+        max-height: 70vh;
+
+        code {
+            line-height: 1.1; 
+            font-size: 14px;
+
+        }
+    }
 }
 
 @media (min-width: 992px){
@@ -142,6 +151,7 @@
     #examples {
         gap: 30px;
         padding: 30px;
+        width: 100%;
         .code-example {
             margin: none;
         }

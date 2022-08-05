@@ -8,12 +8,6 @@
     box-sizing: border-box;
     scroll-behavior: smooth;
 }
-html, body {
-    overflow-x:clip;
-}
-@-moz-document url-prefix() {
-    html,body{overflow-x: clip !important;}
-}
 
 html {
     font-family: 'Poppins', sans-serif;
