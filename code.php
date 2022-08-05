@@ -163,7 +163,59 @@ require_once('templates/header.php');
             <span class="bracket">}</span><br/>
         </div>
     </div>
+    <div class="code-example">
+        
+        <h3>Vue SPA Reflection</h3>
+        <p>For my view reflection, I created a single page application (SPA) that used third party football data and displayed it to the user.</p>
+        <p>Some key features used in my reflection were Vue-Router and localStorage which assisted in creating a fast app that doesn't need to reload from the server and limits the number of requests made to third party APIs.</p>
+
+        <pre>
+            <code class="language-javascript">
+<script>
+import { requestData } from '../api.js';
+
+export default {  
+    data() {
+        return {
+        loading: true,
+        errors: false,
+        newsData: []
+        }
+    },
+
+    methods: {
+        async getNewsData() {
+        this.loading = true;
+        let url = 'https://football98.p.rapidapi.com/premierleague/news';
+        let headers = {
+            'X-RapidAPI-Key': '1444ece9f5msh125fb1f7cc0f8c5p1d2f3bjsn40e719f58738',
+            'X-RapidAPI-Host': 'football98.p.rapidapi.com'
+        };
+        let response = await requestData(url, headers);
+        if (response.data) {
+            this.newsData = response.data;
+            localStorage.newsData = JSON.stringify(response.data);
+            this.loading = false;
+        }    
+        }
+    },
+
+    mounted () {
+        if (localStorage.newsData) {
+        this.newsData = JSON.parse(localStorage.newsData);
+        this.loading = false;
+        } else {
+        this.getNewsData();
+        }
+    }
+}
+</script>
+            </code>
+        </pre>
+    </div>
 </section>
+        
+        
 <footer>
     <a href="#">
         <!-- Up arrow icon -->

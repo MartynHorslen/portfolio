@@ -14,6 +14,12 @@
         <!-- Stylesheets -->
         <link rel="stylesheet" href="css/style.css">
 
+        <!-- Prism -->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/9000.0.1/themes/prism-okaidia.min.css" rel="stylesheet" />
+
         <!-- Font Awesome Icons -->
         <script src="https://kit.fontawesome.com/f0067c17da.js" crossorigin="anonymous"></script>
+
+        
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/9000.0.1/prism.min.js"></script>
     </head>
