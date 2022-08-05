@@ -17,3 +17,9 @@ $(document).ready(()=>{
         $("nav ul").delay(1200).slideUp();
     }
 })
+
+function slideUp() {
+    if (window.innerWidth < 768){
+        $("nav ul").delay(1200).slideUp();
+    }
+}
