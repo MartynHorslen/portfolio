@@ -1,5 +1,6 @@
 #about {
     justify-content: flex-start;
+    overflow-y: scroll;
 }
 .hero figure {
     line-height: 0.7;
@@ -88,6 +89,9 @@
     }
 }
 @media (min-width: 768px){
+    .hero figure figcaption #intro {
+        padding: 0 15px;
+    }
     #about {
         margin-top: 0;
     }
@@ -109,7 +113,7 @@
         #skills {
             flex-basis: 50%;
             div {
-                flex: 33%;
+                flex: 31%;
             } 
         }
         figcaption #intro .flex-cont {
@@ -117,8 +121,12 @@
             flex-direction: row;
             flex-wrap: nowrap;
             justify-content: space-around;
-            .left, .right {
-                flex-basis: 48%;
+            .left {
+                flex: 2;
+                align-self: center;
+            }
+            .right {
+                flex: 1;
                 align-self: center;
             }
             .left {
